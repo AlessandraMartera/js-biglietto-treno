@@ -24,7 +24,7 @@ document.getElementById("price").innerHTML = `${message} ${ticketPrice}`;
 // SE minore di 18 allora 20% di sconto
 if (userAge<18)  {
   let discount = ticketPrice * 0.20;
-  ticketPrice = ticketPrice - discount;
+  ticketPrice = ticketPrice - discount.toFixed(2);
   document.getElementById("discount").innerHTML = "in base alla tua hai diritto alo sconto del 20%";
   document.getElementById("discount_price").innerHTML = "il nuovo prezzo del biglietto è " + ticketPrice + " euro";
   console.log("New Ticket Price is " + ticketPrice + " euro");
@@ -32,7 +32,7 @@ if (userAge<18)  {
 // ALTRIMENTI SE maggiore di 65 allora 40% di sconto
 else if(userAge>=65)  {
     let discount = ticketPrice * 0.40;
-    ticketPrice = ticketPrice - discount;
+    ticketPrice = ticketPrice - discount.toFixed(2);
     document.getElementById("discount").innerHTML = "in base alla tua hai diritto alo sconto del 40%";
     document.getElementById("discount_price").innerHTML = "il nuovo prezzo del biglietto è " + ticketPrice + " euro";
     console.log("New Ticket Price is " + ticketPrice + " euro");
