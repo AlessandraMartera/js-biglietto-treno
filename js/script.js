@@ -2,7 +2,7 @@
 let userAge, userKm, ticketPrice, discountP;
 let messageDiscount = "hai diritto allo sconto";
 const kmPrice = 0.21;
-const message = "il prezzo dei tuo biglitto è"
+const message = "il prezzo del tuo biglitto è"
 
 // chiedi all'utente la sua età
 userAge = parseInt ( prompt ("Quanti anni hai?") );
@@ -15,6 +15,7 @@ console.log("user km = " + userKm);
 // calcola il prezzo del biglietto a seconda di qualti km deve fare
 ticketPrice = userKm * kmPrice;
 console.log("Ticket Price is " + ticketPrice + " euro");
+
 // stampa il prezzo del biglietto
 document.getElementById("price").innerHTML = ticketPrice;
 
@@ -25,14 +26,14 @@ document.getElementById("price").innerHTML = ticketPrice;
 if (userAge<18)  {
   discountP = "20%";
   discount = ticketPrice * 0.20;
-  ticketPrice = ticketPrice - discount.toFixed(2);
+  ticketPrice = ticketPrice - discount;
 }
 
 // ELSE IF discount 40%
 else if(userAge>=65)  {
     discountP = "40%";
     discount = ticketPrice * 0.40;
-    ticketPrice = ticketPrice - discount.toFixed(2);
+    ticketPrice = ticketPrice - discount;
 }
 
 // ELSE nothing discount 
@@ -45,9 +46,7 @@ else {
 document.getElementById("discount").innerHTML = `${messageDiscount} ${discountP}`;
 
 // stamp new price
-document.getElementById("discount_price").innerHTML = "il prezzo del biglietto è " + ticketPrice + " euro";
+document.getElementById("discount_price").innerHTML = "il prezzo del biglietto è " +  ticketPrice.toFixed(2) + " euro";
 
 
 
-
-// console.log("Ticket Price is " + ticketPrice + " euro");
